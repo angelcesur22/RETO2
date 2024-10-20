@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princesspeliss</title>
+    <link rel="stylesheet" href="stylesheets/cssregistro.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script>
+        // Función para redirigir cuando el formulario se envíe
+        function redirigir(event) {
+            event.preventDefault(); // Evita el envío normal del formulario
+            window.location.href = "registro2.html"; // Redirige a la página deseada
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <a href="Index.html" class="enlace">
+            <img src="images/logo.png" alt="Logo" class="logo" width="100">
+        </a>
+        <ul id="menu-principal-3" class="menu">
+            <li><a class="active" href="Index.html">Inicio</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <!-- Columna izquierda con imagen -->
+        <div class="left-side">
+            <img src="images/netflix-ver-peliculas-y-series-eliminadas_crop1691617487536.jpg_554688468.jpg" alt="Imagen de Inicio" class="fullscreen-img">
+        </div>
+
+        <!-- Columna derecha con formulario de registro -->
+        <div class="right-side">
+            <div class="Inicio">
+                <!-- Quita el action del formulario -->
+                <form id="registroForm" onsubmit="redirigir(event)">
+                    <h1>Formulario de Registro</h1>
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{3,12}" title="El nombre debe contener solo letras y tener entre 3 y 12 caracteres" required>
+                    <br><br>
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ]{4,20}" title="El apellido debe contener solo letras y tener entre 4 y 20 caracteres" required>
+                    <br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Ingresa un email válido" required>
+                    <br><br>
+
+                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" min="1920-01-01" max="2006-12-31" required>
+                    <br><br>
+
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="pass" title="La contraseña debe tener entre 8 y 12 caracteres, contener al menos un número, una letra (mayúscula o minúscula) y un carácter especial" required>
+                    <br><br>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-1">
+            <div class="footer-links">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="politicaprivacidad.html">Politica De Privacidad</a></li>
+                    <li><a href="avisolegal.html">Aviso Legal</a></li>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Dirección: Calle San Jon Mono/69</p>
+                <p>Teléfono: +666991237</p>
+                <p>Email: pelis@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="https://wa.me/605562994"><img src="images/whatsapp-logo-whatsapp-logo-transparent-whatsapp-icon-transparent-free-free-png.webp" alt="WhatsApp"></a></li>
+                    <li><a href="https://www.instagram.com/angelmoreno__22/"><img src="images/instagram.png" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="copy">
+            <p>&copy; 2024 princesspeliss. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

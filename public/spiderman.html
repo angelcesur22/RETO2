@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princesspeliss</title>
+    <link rel="stylesheet" href="stylesheets/spiderman.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head> 
+<body>
+    <nav>
+        <a href="Index.html" class="enlace">
+            <img src="images/logo.png" alt="" class="logo">
+        </a>
+        
+        
+       
+        
+        <ul id="menu-principal-3" class="menu">
+            <li><a class="active" href="Index.html">Inicio</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <!-- Sección de la película -->
+    <div class="pelicula-container">
+        <!-- Carrusel de imágenes -->
+        <div class="slider-container">
+            <button class="prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-frame">
+                <ul>
+                    <li><img src="images/Diseño sin título (1).png" alt="Imagen 1"></li>
+                    <li><img src="images/Diseño sin título (1).png alt="Imagen 2"></li>
+                    <li><img src="images/Diseño sin título (1).png" alt="Imagen 3"></li>
+                </ul>
+            </div>
+            <button class="next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Información de la película -->
+        <div class="pelicula-info">
+            <h2>The Amazing Spiderman</h2>
+            <p><strong>Género:</strong> Acción, Aventura</p>
+            <p><strong>Precio:</strong> $59.99</p>
+            <p>Es la historia de Peter Parker (Andrew Garfield), un estudiante de secundaria que fue abandonado por sus padres cuando era niño, dejándolo a cargo de su tío Ben (Martin Sheen) y su tía May (Sally Field). Como la mayoría de los adolescentes de su edad, Peter trata de averiguar quién es y qué quiere llegar a ser.</p>
+            <div class="botones">
+                <button class="button">Reservar</button>
+                <button class="button">Comprar</button>
+                <button class="button">Alquilar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-1">
+            <div class="footer-links">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="politicaprivacidad.html">Politica De Privacidad</a></li>
+                    <li><a href="avisolegal.html">Aviso Legal</a></li>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Dirección: Calle San Jon Mono/69</p>
+                <p>Teléfono: +666991237</p>
+                <p>Email: pelis@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="https://wa.me/605562994"><img src="images/whatsapp-logo-whatsapp-logo-transparent-whatsapp-icon-transparent-free-free-png.webp" alt="WhatsApp"></a></li>
+                    <li><a href="https://www.instagram.com/angelmoreno__22/"><img src="images/instagram.png" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="copy">
+            <p>&copy; 2024 princesspeliss. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+    const sliderFrame = document.querySelector('.slider-frame ul');
+    const sliderItems = document.querySelectorAll('.slider-frame ul li');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let currentIndex = 0;
+
+    // Función para mover las imágenes
+    function updateSliderPosition() {
+        const width = sliderItems[currentIndex].clientWidth;
+        sliderFrame.style.transform = `translateX(-${currentIndex * width}px)`;
+    }
+
+    // Evento para el botón "Next"
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < sliderItems.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Volver al inicio si está en la última imagen
+        }
+        updateSliderPosition();
+    });
+
+    // Evento para el botón "Prev"
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = sliderItems.length - 1; // Volver al final si está en la primera imagen
+        }
+        updateSliderPosition();
+    });
+
+    // Ajustar la posición al redimensionar la ventana
+    window.addEventListener('resize', updateSliderPosition);
+</script>
+
+</html>
